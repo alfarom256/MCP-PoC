@@ -447,15 +447,15 @@ To help visualize their association, the following chart describes a high level 
 ```
            
            
-						 _FLTP_FRAME
-						┌─────────────────────────────────────────────────────────┐
-						│                                                         │
-						│  Type: _FLT_TYPE                                        │
-						│  Links: _LIST_ENTRY                                     │
-						│  FrameID: 0                                             │
-						│  AltitudeIntervalLow: "0"                               │
-						│  AltitudeIntervalHigh: "409500"                         │
-						│  ...                                                    │
+					 _FLTP_FRAME
+					┌─────────────────────────────────────────────────────────┐
+					│                                                         │
+					│  Type: _FLT_TYPE                                        │
+					│  Links: _LIST_ENTRY                                     │
+					│  FrameID: 0                                             │
+					│  AltitudeIntervalLow: "0"                               │
+					│  AltitudeIntervalHigh: "409500"                         │
+					│  ...                                                    │
 				   ┌────┼─ RegisteredFilters: _FLT_RESOURCE_LIST_HEAD             │
 				┌──┼────┤  AttachedVolumes: _FLT_RESOURCE_LIST_HEAD               │
 				│  │    │  ...                                                    │
@@ -485,34 +485,34 @@ To help visualize their association, the following chart describes a high level 
 				│        _FLT_RESOURCE_LIST_HEAD (Volumes)
 				│       ┌──────────────────────────┐
 				└───────► rLock: _ERESOURCE        │
-						│ rList: _LIST_ENTRY ───┐  │
-						│ Count: 0x6            │  │
-						└───────────────────────┼──┘
-												│
-												│
-												│
-												│
-								_FLT_VOLUME     │
-								┌───────────────▼──────────────────────────┐
-								│ \Device\Mup                              │
-								│ Callbacks: _CALLBACK_CTRL                ◄───────┐
-								│ InstanceList: _FLT_RESOURCE_LIST_HEAD    │       │
-								│                                          │       │
-								└───────────────┬──────────────────────────┘       │
-												│                                  │
-								_FLT_VOLUME     │                                  │
-								┌───────────────▼──────────────────────────┐       │
-								│ \Device\HarddiskVolume4                  │       │
-								│ Callbacks: _CALLBACK_CTRL                │       │
-								│ InstanceList: _FLT_RESOURCE_LIST_HEAD    │       │
-								│                                          │       │
-								└───────────────┬──────────────────────────┘       │
-												│                                  │
-								┌───────────────▼──────────────────────────┐       │
-								│                                          │       │
-								│        ... The rest of the list ...      ├───────┘
-								│                                          │
-								└──────────────────────────────────────────┘
+					│ rList: _LIST_ENTRY ───┐  │
+					│ Count: 0x6            │  │
+					└───────────────────────┼──┘
+								│
+								│
+								│
+								│
+						_FLT_VOLUME     │
+						┌───────────────▼──────────────────────────┐
+						│ \Device\Mup                              │
+						│ Callbacks: _CALLBACK_CTRL                ◄───────┐
+						│ InstanceList: _FLT_RESOURCE_LIST_HEAD    │       │
+						│                                          │       │
+						└───────────────┬──────────────────────────┘       │
+								│                                  │
+						_FLT_VOLUME     │                                  │
+						┌───────────────▼──────────────────────────┐       │
+						│ \Device\HarddiskVolume4                  │       │
+						│ Callbacks: _CALLBACK_CTRL                │       │
+						│ InstanceList: _FLT_RESOURCE_LIST_HEAD    │       │
+						│                                          │       │
+						└───────────────┬──────────────────────────┘       │
+								│                                  │
+						┌───────────────▼──────────────────────────┐       │
+						│                                          │       │
+						│        ... The rest of the list ...      ├───────┘
+						│                                          │
+						└──────────────────────────────────────────┘
 ```
 (Fig 3) Association between `_FLTP_FRAME` and `_FLT_VOLUME`
 
